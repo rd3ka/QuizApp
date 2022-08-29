@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="801bb97e-0de6-4683-81a1-813a156da00b" name="Changes" comment="First Structural Working">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuizAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QuizAPI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/api/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/api/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/api/Quizz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/api/Quizz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/api/qData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/api/qData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuizAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QuizApp.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,13 +48,26 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.api.Main" />
-      <module name="QuizAPI" />
+      <module name="QuizApp" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="QuizApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="QuizApp" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,6 +87,14 @@
       <option name="presentableId" value="Default" />
       <updated>1661584233869</updated>
     </task>
+    <task id="LOCAL-00001" summary="First Structural Working">
+      <created>1661800526821</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661800526822</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
