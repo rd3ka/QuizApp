@@ -29,7 +29,7 @@ public class Quizz {
                 "type=" + type);
     }
 
-    Quizz(String type) {
+    public Quizz(String type) {
         this.url = this.url.concat("amount=" + this.NumOfQuestions
                 + "&" +
                 "category=31"
@@ -42,7 +42,7 @@ public class Quizz {
         return this.url;
     }
 
-    final synchronized protected void init()  {
+    public final synchronized void init()  {
         JsonObject contents = null;
         try (InputStream is = new URL(this.url).openStream()) {
             contents = (JsonObject) JsonParser.parseString(new String(is.readAllBytes()));
@@ -55,10 +55,9 @@ public class Quizz {
                         .getAsJsonArray()
                         .get(0)));
         }
-        //showInfo();
     }
 
-    final synchronized protected qData get() {
+    public final synchronized qData get() {
         if (qstack.isEmpty())
             this.init();
         return qstack.pop();

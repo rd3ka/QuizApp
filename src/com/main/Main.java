@@ -1,4 +1,7 @@
-package com.api;
+package com.main;
+
+import com.api.Quizz;
+import com.api.qData;
 
 import java.util.ArrayList;
 import java.util.Scanner;
