@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="801bb97e-0de6-4683-81a1-813a156da00b" name="Changes" comment="Added more abstraction and encapsulation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/api/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/api/Quizz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/api/Quizz.java" afterDir="false" />
-    </list>
+    <list default="true" id="801bb97e-0de6-4683-81a1-813a156da00b" name="Changes" comment="Separation &amp; Segregation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661823311218</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Separation &amp; Segregation">
+      <created>1661824314503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661824314503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Structural Working" />
     <MESSAGE value="Added more abstraction and encapsulation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more abstraction and encapsulation" />
+    <MESSAGE value="Separation &amp; Segregation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separation &amp; Segregation" />
   </component>
 </project>
