@@ -39,12 +39,15 @@ public class qData {
     }
 
     public boolean checkCorrectAnswer(String ans) {
-        return ans.equals(this.correctAnswer);
+        return ans.equals(transform(this.correctAnswer));
     }
+
+    public String getCorrectAnswer() { return transform(this.correctAnswer); }
 
     private String transform(String s) {
         return s.replaceAll("&quot;","\"")
                 .replaceAll("&#039;","'")
+                .replaceAll("\"","")
                 .trim();
     }
 

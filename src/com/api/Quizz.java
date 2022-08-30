@@ -55,10 +55,16 @@ public class Quizz {
                         .getAsJsonArray()
                         .get(0)));
         }
-        showInfo();
+        //showInfo();
     }
 
-   protected void showInfo() {
+    final synchronized protected qData get() {
+        if (qstack.isEmpty())
+            this.init();
+        return qstack.pop();
+    }
+
+   private void showInfo() {
        System.out.println(this.url);
        System.out.println(this.qstack.size());
        qData samp = qstack.peek();
