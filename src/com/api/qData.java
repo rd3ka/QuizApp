@@ -4,13 +4,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class qData {
     protected String category, type, difficulty;
     private final String correctAnswer;
     private final String question;
-    ArrayList <String> incorrectAnswers = new ArrayList<>();
+    private final ArrayList <String> incorrectAnswers = new ArrayList<>();
 
     qData(JsonObject q) {
         this.category = q.get("category").toString();
@@ -31,20 +30,19 @@ public class qData {
         return transform(this.question);
     }
 
-    public ArrayList <String> getAnswers() {
-        ArrayList <String> ans = new ArrayList<>(this.incorrectAnswers);
-        ans.add(correctAnswer);
-        Collections.shuffle(ans);
-        return ans;
+    public ArrayList <String> getIncorrectAnswers() {
+       return this.incorrectAnswers;
     }
 
     public boolean checkCorrectAnswer(String ans) {
         return ans.equals(transform(this.correctAnswer));
     }
 
-    public String getCorrectAnswer() { return transform(this.correctAnswer); }
+    public String getCorrectAnswer() {
+        return transform(this.correctAnswer);
+    }
 
-    private String transform(String s) {
+    protected String transform(String s) {
         return s.replaceAll("&quot;","\"")
                 .replaceAll("&#039;","'")
                 .replaceAll("\"","")

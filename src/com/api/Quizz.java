@@ -10,6 +10,7 @@ public class Quizz {
     private String url = "https://opentdb.com/api.php?";
     private final int NumOfQuestions = 10;
     final private Stack <qData> qstack = new Stack<>();
+    private qData qstackFrame;
 
     Quizz(String category, String difficulty, String type) {
         this.url = this.url.concat("amount=" + this.NumOfQuestions
@@ -50,24 +51,31 @@ public class Quizz {
         } catch (Exception ignored) {
         }
         if (contents != null) {
-            for (int i = 0; i < this.NumOfQuestions; i++)
+            for (int i = 0; i < this.NumOfQuestions; i++) {
                 this.qstack.add(new qData((JsonObject) contents.get("results")
                         .getAsJsonArray()
-                        .get(0)));
+                        .get(i)));
+            }
         }
     }
-
-    public final synchronized qData get() {
-        if (qstack.isEmpty())
-            this.init();
-        return qstack.pop();
+    public synchronized boolean get() {
+        if (this.qstack.isEmpty())
+            return false;
+        this.qstackFrame = this.qstack.pop();
+        return true;
     }
 
-   private void showInfo() {
-       System.out.println(this.url);
-       System.out.println(this.qstack.size());
-       qData samp = qstack.peek();
-       System.out.println(samp.getQuestion());
-       System.out.println(samp.getAnswers());
-   }
+    public synchronized void showQuestions() {
+        System.out.println(this.qstackFrame.getQuestion());
+    }
+
+    public void showAnswers() {
+        ArrayList <String> qans = this.qstackFrame.getIncorrectAnswers();
+        qans.add(this.qstackFrame.getCorrectAnswer());
+        Collections.shuffle(qans);
+        Map <Character, String> aq = new HashMap<>();
+        for(int i = 0; i < qans.size(); i++)
+            aq.put((char) ('a' + i), this.qstackFrame.transform(qans.get(i)));
+        System.out.println(aq);
+    }
 }
