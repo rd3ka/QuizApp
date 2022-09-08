@@ -79,11 +79,8 @@ public class Quizz {
         ArrayList <String> qans = this.qstackFrame.getIncorrectAnswers();
         qans.add(this.qstackFrame.getCorrectAnswer());
         Collections.shuffle(qans);
-        Map <Character, String> aq = new HashMap<>();
-        for(int i = 0; i < qans.size(); i++) {
-            aq.put((char) ('a' + i), this.qstackFrame.transform(qans.get(i)));
+        for(int i = 0; i < qans.size(); i++)
             this.q2a.put((char) ('a' + i), this.qstackFrame.transform(qans.get(i)));
-        }
-        aq.forEach((k,v) -> System.out.println(k + " : " + v));
+        this.q2a.forEach((k,v) -> System.out.println(k + " : " + v));
     }
 }
