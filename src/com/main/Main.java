@@ -1,7 +1,7 @@
 package com.main;
 
 import com.api.Quizz;
-
+import java.util.Scanner;
 public class Main {
 
     public static void play(Quizz q) {
@@ -9,6 +9,7 @@ public class Main {
       while(q.get()) {
           q.showQuestions();
           q.showAnswers();
+          System.out.println(q.checkAnswer(new Scanner(System.in).nextLine().charAt(0)));
       }
     }
 

@@ -10,6 +10,7 @@ public class Quizz {
     private String url = "https://opentdb.com/api.php?";
     private final int NumOfQuestions = 10;
     final private Stack <qData> qstack = new Stack<>();
+    final private Map <Character, String> q2a = new HashMap<>();
     private qData qstackFrame;
 
     Quizz(String category, String difficulty, String type) {
@@ -61,6 +62,7 @@ public class Quizz {
     public synchronized boolean get() {
         if (this.qstack.isEmpty())
             return false;
+        this.q2a.clear();
         this.qstackFrame = this.qstack.pop();
         return true;
     }
@@ -69,13 +71,19 @@ public class Quizz {
         System.out.println(this.qstackFrame.getQuestion());
     }
 
+    public synchronized boolean checkAnswer(Character answer) {
+        return this.qstackFrame.checkCorrectAnswer(q2a.get(answer));
+    }
+
     public void showAnswers() {
         ArrayList <String> qans = this.qstackFrame.getIncorrectAnswers();
         qans.add(this.qstackFrame.getCorrectAnswer());
         Collections.shuffle(qans);
         Map <Character, String> aq = new HashMap<>();
-        for(int i = 0; i < qans.size(); i++)
+        for(int i = 0; i < qans.size(); i++) {
             aq.put((char) ('a' + i), this.qstackFrame.transform(qans.get(i)));
-        System.out.println(aq);
+            this.q2a.put((char) ('a' + i), this.qstackFrame.transform(qans.get(i)));
+        }
+        aq.forEach((k,v) -> System.out.println(k + " : " + v));
     }
 }
