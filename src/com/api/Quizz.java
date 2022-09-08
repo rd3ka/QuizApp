@@ -39,7 +39,6 @@ public class Quizz {
                 "type=" + type);
     }
 
-
     final protected String checkUrl() {
         return this.url;
     }
