@@ -9,7 +9,15 @@ public class Main {
       while(q.get()) {
           q.showQuestions();
           q.showAnswers();
-          System.out.println(q.checkAnswer(new Scanner(System.in).nextLine().charAt(0)));
+          char toSend;
+          try {
+              toSend = new Scanner(System.in).nextLine().charAt(0);
+              if (toSend < 'a' || toSend > 'd') continue;
+              System.out.println(q.checkAnswer(toSend));
+          }
+          catch (NumberFormatException exception) {
+              System.out.println("Wrong Format Provided");
+          }
       }
     }
 
