@@ -52,12 +52,12 @@ public class qData {
     @Override
     public String toString() {
         return "qData{" +
-                "category=" + category +
-                ", type=" + type +
-                ", difficulty=" + difficulty +
-                ", correctAnswer=" + correctAnswer +
-                ", question=" + question +
-                ", incorrectAnswers=" + incorrectAnswers +
+                "category = " + category +
+                ", type = " + type +
+                ", difficulty = " + difficulty +
+                ", correctAnswer = " + correctAnswer +
+                ", question = " + question +
+                ", incorrectAnswers = " + incorrectAnswers +
                 '}';
     }
 }
