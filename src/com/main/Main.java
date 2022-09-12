@@ -28,6 +28,8 @@ public class Main {
           }
           if (play == 'y')
               q.init();
+          else if (play == 'n')
+              break;
       }
     }
 
