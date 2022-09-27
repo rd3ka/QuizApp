@@ -74,7 +74,7 @@ public class Quizz {
     public synchronized void showQuestions() {
         System.out.println(this.qstackFrame.getQuestion());
     }
-
+    public synchronized String getCorrectAnswer() { return this.qstackFrame.getCorrectAnswer(); }
     public synchronized boolean checkAnswer(Character answer) {
         boolean b =  this.qstackFrame.checkCorrectAnswer(q2a.get(answer));
         if (b)

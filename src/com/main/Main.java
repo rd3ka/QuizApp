@@ -15,7 +15,8 @@ public class Main {
           try {
               toSend = new Scanner(System.in).nextLine().charAt(0);
               if (toSend < 'a' || toSend > 'd') continue;
-              System.out.println(q.checkAnswer(toSend));
+              if (!q.checkAnswer(toSend))
+                  System.out.println(q.getCorrectAnswer());
           }
           catch (InputMismatchException exception) {
               System.out.println(exception.toString());
